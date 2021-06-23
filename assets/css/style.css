@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../images/witcher.png);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.area {
+    width: 100%;
+    max-width: 500px;
+}
+
+.area h1 {
+    color: rgb(243, 9, 40);
+    font-family: 'Kaushan Script', cursive;
+    font-size: 85px;
+    margin-bottom: 20px;
+}
+
+header .btn {
+    font-size: 22px;
+    background: rgb(46, 43, 43);
+    color: rgb(185, 13, 13);
+    font-family: 'Kaushan Script', cursive;
+}
+
+.modal-footer p strong {
+    font-size: 20px;
+}
+
+.show {
+    display: flex !important;
+}
+
+.red:active {
+    background-color: red !important;
+}
