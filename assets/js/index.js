@@ -18,17 +18,20 @@ function setModal() {
 
         let search = quiz.filter(i=> i.id >= 0);
         
-        while (cart.length < search.length) {
+        while (cart.length < 5) {
             let random = Math.floor(Math.random() * search.length);
 
             if (cart.indexOf(random) == -1) {
-                cart.push(random); 
+                cart.push(random);
+                
             };
         };
 
         for(let i in cart) {
             let numbers = cart[i];
+            
             let resultNumbers = search[numbers]
+            console.log(cart) 
 
             quizitem.querySelectorAll('.modal-title strong').forEach(res => {
                 res.innerHTML = resultNumbers.question;
