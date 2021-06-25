@@ -1,48 +1,23 @@
 const l = el => document.querySelector(el);
 const ls = el => document.querySelectorAll(el);
 
-
 function setModal() {
     function cloneModal() {
-
-        quiz.map(() => {
+        quiz.forEach((item) =>{
             let quizitem = l('.modal').cloneNode(true);
 
-            randomQuestions(quizitem);
+            quizitem.querySelectorAll('.modal-title strong').forEach(res => {
+                res.innerHTML = item.question;
+            });
     
+            quizitem.querySelectorAll('.modal-body .btn').forEach((res, index) => {
+                res.innerHTML = item.response[index];
+            });
+
             l('main').append(quizitem);
         });    
     };
     cloneModal();
-
-    function randomQuestions(quizitem) {
-        const cart = [];
-
-        let search = quiz.filter(i=> i.id >= 0);
-        
-        while (cart.length < search.length) {
-            let random = Math.floor(Math.random() * search.length);
-
-            if (cart.indexOf(random) == -1) {
-                cart.push(random); 
-            };
-        };
-
-        for(let i in cart) {
-            let numbers = cart[i];
-            let resultNumbers = search[numbers];
-            console.log(resultNumbers);
-
-            quizitem.querySelectorAll('.modal-title strong').forEach(res => {
-                res.innerHTML = resultNumbers.question;
-            });
-    
-            quizitem.querySelectorAll('.modal-body .btn').forEach((res, index) => {
-                res.innerHTML = resultNumbers.response[index];
-            });
-        }
-
-    };
 };
 setModal();
 
