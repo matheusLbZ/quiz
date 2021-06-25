@@ -1,19 +1,19 @@
 const l = el => document.querySelector(el);
 const ls = el => document.querySelectorAll(el);
-let quizitem;
 
 function setModal() {
     function cloneModal() {
         quiz.forEach(() => {
             quizitem = l('.modal').cloneNode(true);
 
-            console.log(quizitem)
+            randomQuestions(quizitem);
+
             l('main').append(quizitem);
         });    
     };
     cloneModal();
 
-    function randomQuestions() {
+    function randomQuestions(quizitem) {
         const cart = [];
 
         let search = quiz.filter(i=> i.id >= 0);
@@ -31,15 +31,14 @@ function setModal() {
             let resultNumbers = search[numbers]
 
             quizitem.querySelectorAll('.modal-title strong').forEach(res => {
-                res.innerHTML = item.question;
+                res.innerHTML = resultNumbers.question;
             });
     
             quizitem.querySelectorAll('.modal-body .btn').forEach((res, index) => {
-                res.innerHTML = item.response[index];
+                res.innerHTML = resultNumbers.response[index];
             });
         };
     };
-    randomQuestions();
 };
 setModal();
 
