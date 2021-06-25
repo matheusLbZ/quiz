@@ -28,14 +28,14 @@ function setModal() {
 
         for(let i in cart) {
             let numbers = cart[i];
-            let resultNumbers = search[numbers];
+            let resultNumbers = search[numbers]
 
             quizitem.querySelectorAll('.modal-title strong').forEach(res => {
-                res.innerHTML = resultNumbers.question;
+                res.innerHTML = item.question;
             });
     
             quizitem.querySelectorAll('.modal-body .btn').forEach((res, index) => {
-                res.innerHTML = resultNumbers.response[index];
+                res.innerHTML = item.response[index];
             });
         };
     };
