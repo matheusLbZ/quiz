@@ -4,8 +4,14 @@ const ls = el => document.querySelectorAll(el);
 function setModal() {
     function cloneModal() {
         quiz.forEach(() => {
+<<<<<<< HEAD
             let quizitem = l('.modal').cloneNode(true);
             
+=======
+            quizitem = l('.modal').cloneNode(true);
+            console.log(quizitem)
+
+>>>>>>> 1b438cba7993aa516f3acfbe0b74e3f18420e789
             randomQuestions(quizitem);
 
             l('main').append(quizitem);
