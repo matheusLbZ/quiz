@@ -4,15 +4,9 @@ const ls = el => document.querySelectorAll(el);
 function setModal() {
     function cloneModal() {
         quiz.forEach(() => {
-<<<<<<< HEAD
             let quizitem = l('.modal').cloneNode(true);
-            
-=======
-            quizitem = l('.modal').cloneNode(true);
-            console.log(quizitem)
-
->>>>>>> 1b438cba7993aa516f3acfbe0b74e3f18420e789
-            randomQuestions(quizitem);
+                console.log(quizitem)
+                randomQuestions(quizitem);
 
             l('main').append(quizitem);
         });    
@@ -24,7 +18,7 @@ function setModal() {
 
         let search = quiz.filter(i=> i.id >= 0);
         
-        while (cart.length < 5) {
+        while (cart.length < 1) {
             let random = Math.floor(Math.random() * search.length);
 
             if (cart.indexOf(random) == -1) {
@@ -37,7 +31,7 @@ function setModal() {
             let numbers = cart[i];
             
             let resultNumbers = search[numbers]
-            console.log(cart) 
+            console.log(resultNumbers) 
 
             quizitem.querySelectorAll('.modal-title strong').forEach(res => {
                 res.innerHTML = resultNumbers.question;
