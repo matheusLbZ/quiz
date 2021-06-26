@@ -5,6 +5,7 @@ function setModal() {
     function cloneModal() {
         quiz.forEach(() => {
             quizitem = l('.modal').cloneNode(true);
+            console.log(quizitem)
 
             randomQuestions(quizitem);
 
