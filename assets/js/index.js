@@ -13,11 +13,21 @@ function cloneModal() {
             res.innerHTML = item.response[index];
         });
 
-        l('main').appendChild(quizitem);
-        return quizitem;
+        l('main').append(quizitem);
     }); 
 };
 cloneModal();
+
+function setdata() {
+    ls('#ques').forEach((item, index)=> {
+        item.setAttribute('data-key', index);
+        item.addEventListener('click', el => {
+            let key = el.target.closest('#ques').getAttribute('data-key');
+            console.log(key)
+            
+        });
+    });
+};
 
 //Alternando de um modal para outro
 function numberId() {
@@ -34,4 +44,7 @@ function numberId() {
     }
 };
 
-l('.btn1, .principal').addEventListener('click', numberId);;
+l('.btn1, .principal').addEventListener('click', () => {
+    numberId();
+    setdata();
+});

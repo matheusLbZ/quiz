@@ -9,6 +9,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.modal {
+    transition: 1s ease;
+}
+
 .area {
     width: 100%;
     max-width: 500px;
