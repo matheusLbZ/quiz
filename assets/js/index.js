@@ -45,6 +45,6 @@ function numberId() {
 };
 
 l('.btn1, .principal').addEventListener('click', () => {
-    numberId();
-    setdata();
+    numberId;
+    setdata;
 });
